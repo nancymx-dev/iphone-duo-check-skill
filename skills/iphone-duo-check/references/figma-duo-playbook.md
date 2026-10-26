@@ -28,7 +28,7 @@ Keep the screen copy on the page rather than moving it into a wrapper: files oft
    - Fold, inner landscape folded: `COLUMNS`, `STRETCH`, `count: 2`, `gutterSize: 40`, `offset: 0` (the gutter lands on x 456 → 496)
    - Content margin: `COLUMNS`, `STRETCH`, `count: 1`, `offset` = the design's side padding, very low alpha
    - At most two grids per screen, so the view stays readable.
-3. **Device frame (optional):** import the pose's Standard template by key, create a temporary instance off to the side, `detachInstance()`, move only its `iPhone Duo` child into a new frame (no fill, `clipsContent = false`) at the pose position and the template's offset (outer portrait −29,−27; inner −40,−40), lock it, then delete the rest of the temporary copy. If the import fails, skip the device frame and say nothing.
+3. **Device frame:** import the pose's Standard template by key, create a temporary instance off to the side, `detachInstance()`, move only its `iPhone Duo` child into a new frame (no fill, `clipsContent = false`) at the pose position and the template's offset (outer portrait −29,−27; inner −40,−40), lock it, then delete the rest of the temporary copy. If the import fails, explain the library access blocker and ask the user to confirm that the required kit is added and enabled before continuing.
 
 **Never put Apple's guide components on the canvas** (Layout Margin, Safe Area Inset, Reserved Region, Fold Avoidance Region). Their solid colours cover the design, and designers don't want them in the file. Read their positions from the kit reference instead.
 

@@ -2,11 +2,11 @@
 
 Apple's official Figma community library **iOS and iPadOS 27** (Apple Design Resources) has ready-made iPhone Duo templates. The sizes and geometry below were read from it in October 2026 (library last updated 21 October 2026), so they apply to every file and every designer: nothing here belongs to a particular project file. Never invent sizes.
 
-## Using the components (optional)
+## Required kit setup and component use
 
-The tables below are enough on their own. The components are a nice extra, not a requirement:
+**Required Figma setup:** Before using this skill, add the **iOS and iPadOS 27 UI Kit** by **Apple Design Resources** in Figma and enable its library in the design file you want checked. Confirm that its components are available in that file before starting.
 - Library key: `lk-3167e7e1386e96621fc3b20782e2ec1b199754eeceff2ef04bf90d28a124be6414b67982dc8fb71ea1896b0310c316f54d7b9f0ac598cb3111748728c039a567`
-- Try `figma.importComponentByKeyAsync(key)` with the keys below; importing doesn't put anything on the canvas. If it fails, draw the guides from the geometry table instead (see the playbook). Never ask the user to add the library.
+- Try `figma.importComponentByKeyAsync(key)` with the keys below; importing doesn't put anything on the canvas. If it fails, ask the user to confirm that the kit has been added and its library enabled in the target file. Resolve access before editing.
 - To check for a newer kit, run `search_design_system`, query `iPhone Duo`, with `includeLibraryKeys` set to the key above. If the sizes changed, trust the live library and tell the user.
 - If the user's file already has `iPhone Duo` device instances, read their variant and size and match them.
 

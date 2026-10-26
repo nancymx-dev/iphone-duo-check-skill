@@ -82,6 +82,8 @@ and read the "Change log" table at the end of `primaryContentSections`. If there
 
 ### Apple's Figma kit: iOS and iPadOS 27
 
+**Required Figma setup:** Before using this skill, add the **iOS and iPadOS 27 UI Kit** by **Apple Design Resources** in Figma and enable its library in the design file you want checked. Confirm that its components are available in that file before starting. If it is missing, ask the user to add and enable it before continuing.
+
 `references/ios27-duo-kit.md` lists the iPhone Duo templates, guides and device frames in Apple's **iOS and iPadOS 27** community library, with component keys, exact sizes and where the side rail, camera and fold sit in every pose. Read it at the start of every run. It's the only source for artboard sizes, fold position and margins, and every mock and artboard is built from it. If the kit has been updated (check with `search_design_system`, query `iPhone Duo`, for new or renamed templates), trust the live library over the reference file and tell the user.
 
 If the user's team has its own design system guidance for iPhone Duo or foldables (in a wiki, docs tool or design system site the session can reach), search for it once. Where it's more specific than Apple's, prefer it and tell the user.
@@ -99,7 +101,7 @@ Ask for the screen (Figma frame link preferred, PNG fine) and whether it's nativ
 
 Remind the user to crop or blur anything that looks like real customer data, and use test data in mocks. If something you receive appears to contain customer PII (names, email addresses, phone numbers), point it out and suggest a redacted version. The user can override if they judge it acceptable.
 
-If you get a Figma link, screenshot the frame yourself and read its auto-layout (see the playbook's inspect script) so findings are based on real sizing, not guesses from pixels. The check never depends on the user's file having any particular library: the sizes and geometry in the kit reference work for any screen in any file.
+If you get a Figma link, screenshot the frame yourself and read its auto-layout (see the playbook's inspect script) so findings are based on real sizing, not guesses from pixels. Confirm that the required iOS and iPadOS 27 UI Kit library is enabled in the user's design file before running the check.
 
 Run the check against the kit's geometry, not general impressions: lay the screen's content against each pose's content area, side rail, camera reserved region and fold avoidance band (`references/ios27-duo-kit.md`, "Geometry of each pose"). For example, a CTA at y 470 on inner portrait sits in the fold band (y 456 → 496) when folded.
 
@@ -143,7 +145,7 @@ Ask for the **direct Figma link to the frame** (a URL with `node-id=`), unless S
 
 Check the Figma connector is signed in (the `use_figma` tool must be available). If it isn't, tell them to type `/mcp` in the message box, choose the Figma server and sign in, or use the Connectors menu under the **+** button. Don't send them to Figma's Dev Mode MCP setting: that server is read-only.
 
-Artboard sizes and guide positions come from `references/ios27-duo-kit.md`, so Step 4 works in any file. If Apple's iOS and iPadOS 27 components happen to import in the user's file, use them for the guides and device frame; if not, draw the guides from the stored geometry and skip the device frame. Don't ask the user to add a library, and don't mention it unless they ask why there's no device frame.
+Confirm that Apple's iOS and iPadOS 27 UI Kit has been added in Figma and its library is enabled in the target file. Use its components and the geometry in `references/ios27-duo-kit.md`. If the components cannot be accessed, explain the blocker and ask the user to check the library setup before editing.
 
 Screenshot the linked node, confirm it's the right frame, then ask for permission in one line (see the script). By default you'll build copies and make **no colour, fill, stroke, token, type style, icon or copy changes, and no restyling** beyond the spec's minimal additions.
 
@@ -158,7 +160,7 @@ Work in small calls:
 2. Make a row of pose artboards to the right of the original, one per pose the option covers, named `<original name> – Duo <pose> – Option <X>`. Size each from the kit template, and put a copy of the user's design inside it (see the playbook's "Pose artboard" recipe).
 3. Fix structure in each copy so it fits the pose's content area (fill and hug, max-widths, wrap).
 4. Apply the option's changes per pose (fold-safe actions, extra hierarchy, control placement).
-5. Show the pose's side rail, margin and fold as **Figma layout grids** on each screen copy, never as coloured layers. Designers toggle layout grids with Control + G, and grids never appear in exports or prototypes. Add the matching `iPhone Duo` device frame from the kit as a separate locked layer; skip it if the kit doesn't import. Never place Apple's coloured guide components (Layout Margin, Safe Area Inset, Reserved Region, Fold Avoidance Region) on the canvas: they cover the design's own colours.
+5. Show the pose's side rail, margin and fold as **Figma layout grids** on each screen copy, never as coloured layers. Designers toggle layout grids with Control + G, and grids never appear in exports or prototypes. Add the matching `iPhone Duo` device frame from the kit as a separate locked layer; if the kit does not import, resolve the library access blocker before continuing. Never place Apple's coloured guide components (Layout Margin, Safe Area Inset, Reserved Region, Fold Avoidance Region) on the canvas: they cover the design's own colours.
 6. Screenshot after each meaningful step and fix anything clipped, stretched or sitting in the fold before moving on.
 
 Keep colours intact by reusing what exists: clone existing nodes and instances. If the spec needs something that doesn't exist (e.g. a vertical tab rail component), stop and say so: mock it from existing parts, label it "mock, needs a design system component", and list it under "Not done".

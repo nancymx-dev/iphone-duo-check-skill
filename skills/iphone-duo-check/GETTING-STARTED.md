@@ -1,5 +1,7 @@
 # Getting started
 
+**Required Figma setup:** Before using this skill, add the **iOS and iPadOS 27 UI Kit** by **Apple Design Resources** in Figma and enable its library in the design file you want checked. Confirm that its components are available in that file before starting.
+
 1. Install this entire folder, including `references/`, using your assistant's supported skill installation method.
 2. Give the assistant a Figma frame link or redacted screenshot, and say whether it is a native app or mobile webapp.
 3. Ask it to use `iphone-duo-check`.

@@ -8,6 +8,10 @@ A design-assistance skill for checking an existing app screen across outer, inne
 
 Read [Getting started](skills/iphone-duo-check/GETTING-STARTED.md). The installable folder is `skills/iphone-duo-check/`.
 
+## Required Figma setup
+
+**Required Figma setup:** Before using this skill, add the **iOS and iPadOS 27 UI Kit** by **Apple Design Resources** in Figma and enable its library in the design file you want checked. Confirm that its components are available in that file before starting.
+
 ## Install
 
 Download the single-skill ZIP from the GitHub release, extract it, and copy the entire `iphone-duo-check` folder into your assistant's supported skills directory. Reload skills as required by your assistant.
