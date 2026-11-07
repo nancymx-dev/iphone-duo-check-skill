@@ -135,6 +135,9 @@ Choose the presentation surface for the assistant environment:
 Use “Artifact” or “Site” in the Step 2 message to match the surface actually created, and link to the result. The choice of surface does not change the option-selection or Figma-editing permission gates.
 
 Include:
+- **Native side controls in the visual options:** Show the existing app's navigation, toolbar and tab controls in their proposed positions in every relevant mini mock. Show vertical controls on the outer display and inner landscape, and horizontal bars on inner portrait. For Split View, show controls on the app's outer edge when the option addresses it. Include the status and Dynamic Island space, safe area and existing control groups.
+- **Constrained-space behavior:** For each native option, show or clearly describe which toolbar actions overflow, whether the tab bar is minimized, and why that choice fits the screen's navigation or task. Identify priority actions and accessible labels. Keep every action reachable and distinguish system behavior from custom design-system work.
+- **Verification:** List any custom component or implementation needed, and flag toolbar behavior, overflow, accessibility and state across poses as needing device or simulator testing. Do not present a mock as proof that these interactions work. For web designs, distinguish browser controls from native app controls.
 - a short **recommendation** at the top: which option and why, in one or two sentences
 - a **Pose check** panel: one row per pose with its verdict and cause
 - the **options** side by side. For each:
