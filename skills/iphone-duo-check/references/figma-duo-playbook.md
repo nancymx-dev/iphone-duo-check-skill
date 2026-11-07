@@ -66,7 +66,7 @@ Look for `FIXED` widths and heights: they're the usual reason a screen won't str
 
 **Keep an element off the fold:** move it into the left or right half's container rather than nudging x; absolute nudges break when sizes change.
 
-**Side rail mock (no design system component yet):** a vertical auto-layout frame, 84pt wide, on the pose's right edge (matching the kit's `Vertical Bar`), built from clones of the existing tab bar items (icon + label). Order: Back/Close at top, then the main action, then tabs. Name it `Side rail (mock)`.
+**Side rail mock (no design system component yet):** a vertical auto-layout frame, 84pt wide, on the pose's right edge (matching the kit's `Vertical Bar`), built from clones of the existing tab bar items (icon + label). Place Back/Close first and prominent actions next; preserve the original toolbar groupings, with tabs toward the bottom. Include system space and model overflow or tab minimization according to the screen’s task. Label the result as a mock requiring engineering verification. Name it `Side rail (mock)`.
 
 **List + detail:** clone the detail screen's content into a second pane beside the list in a horizontal auto-layout (`FILL`/`FILL`); add a selected state using the existing selected row style only.
 

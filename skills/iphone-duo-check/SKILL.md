@@ -112,6 +112,17 @@ Then check the screen in each pose from `references/duo-patterns.md` ("The poses
 
 Tie each Risk or Fail to a cause, e.g. "Inner, half-folded: the 'Continue' button sits centred across the fold. It's a fixed-width button centred in the frame."
 
+
+## Native side controls: assess and adapt
+
+For native designs, map existing navigation, toolbar actions and tabs before recommending changes. On the outer display and inner landscape, show system and app controls along the side; inner portrait keeps horizontal bars. In Split View use the outer edge of each app. Preserve each action, its meaning and relative grouping across poses. Place Back or Close before prominent actions, preserve the original top and bottom toolbar groupings, and keep tabs toward the bottom. Account for the system status and Dynamic Island area, safe areas and changes when Live Activities expand. Do not insert arbitrary spacing or force content-specific controls away from their content.
+
+When space is constrained, show and test both full and compressed states: navigation-focused screens preserve tabs and move lower-priority toolbar actions to the system overflow; task-focused screens can minimize tabs to preserve essential actions. Prioritize frequent actions and badges, give symbol-only actions accessible titles, and reserve the ellipsis for overflow. Wide text controls and segmented controls may remain horizontal. Avoid assuming all controls must become a single custom rail.
+
+Inspect whether bars are system components or custom. System components may adapt automatically; a custom implementation requires an engineering decision, not a claim of automatic behavior. For custom controls, propose a faithful arrangement using existing design-system elements, and flag missing components as mocks needing engineering. For web screens treat browser controls separately and do not claim native system bars apply. Check accessibility labels, reachability, overflow, Split View, rotation and fold/unfold state. A Figma mock cannot prove runtime behavior; request a device or simulator check and report what remains unverified.
+
+Sources: [Apple HIG](https://developer.apple.com/design/human-interface-guidelines/designing-for-iphone-duo) and [Apple design talk](https://developer.apple.com/videos/play/tech-talks/111466/).
+
 ## Step 2: Recommend options and ask for a choice
 
 Read `references/duo-patterns.md` for the pattern catalogue and pick 2–4 options that fit **this** screen and **these** findings, ordered from least to most change. Don't pad with options that don't solve anything.
